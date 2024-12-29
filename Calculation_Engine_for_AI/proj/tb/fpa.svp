@@ -1,0 +1,78 @@
+// A model for the fpadder
+class fpamodel extends uvm_scoreboard;
+`uvm_component_utils(fpamodel)
+uvm_tlm_analysis_fifo#(FP11) pa;
+uvm_tlm_analysis_fifo#(FP11) pb;
+uvm_tlm_analysis_fifo#(FP11) pc;
+uvm_tlm_analysis_fifo#(FP11) pd;
+uvm_analysis_port#(FP11) pz;
+
+function void build_phase(uvm_phase phase);
+    pa=new("pa",this);
+    pb=new("pb",this);
+    pc=new("pc",this);
+    pd=new("pd",this);
+    pz=new("pz",this);
+endfunction : build_phase
+
+task run_phase(uvm_phase phase);
+    FP11 A,B,C,D;
+    forever begin
+       pa.get(A);
+       pb.get(B);
+       pc.get(C);
+       pd.get(D);
+       pz.write(compz(A,B,C,D));
+    end
+endtask : run_phase
+
+
+`protected
+BPAAVg.K&8N4Z;IUaJ0eOaNaU:?#c)Y2[3)\S1FCPg8ZAaIJS)Cg5)ARQ@cYW=[>
++9F=g:+8==2&L3[9cY]N1Y@:9E8S3HKJ2N.7/2X@?X/e^MV.E?;,TKf/DEJ<We(9
+S76S8KR<GR3\EN)>]3S04Tg02:FbTVGM+FgQ<=BOBTd)[g89<];9>:UNI7T+8?OJ
+1(@G/(.^Lg@^UN>b5NGZK2,:273J.\#[CPO8G&>J.\gNX_97#QYUVF?.ggU,<#.^
+#>#MA[N8_KT1EZXgZbZ^)]US?AS#4RM0<B&AP-/@3bNF;?[&U]#RABWR7522DS.d
+_+R[.-DJVY]@POIFOX1SOI@F?eReI[NTKA2K>(H@Sf<EAdRUQKFL\7e9YQbE+AOb
+S[<.D;;bGe2XH=Z;L5EeX=6BTT^WZKaOMSJT])NK(A6G/FE64e3gR;#^U4LHX&=U
+dXBV=6OX&MUcE9V.O94LE&5;\>)YcM)?\&#TFOTMHEa@LP]/fXG2>PHI,EVf?8K_
+>>N+1c:9eKD0c[@^)?7&/a-WeQ,.3D(>d:+K^Ug]A0-.K#a8VW4?DYPdURf0PYOH
+&QX5RA/QdF8RV3.K(,Z-d9+-(Gb40_<QD7K\3.&=cAU:3?NIVee1W<@X>LY@B/TX
+aSE_fM84O>8cf<\2^g6Y(f+DX)1OYAAD0G[ILZN#,:]R7g:6DQ_DRU:B&GT^-2IV
+D3X_(C_B[\G3Q&:;XL6gX(15OYJNI=.g5(.SWSX-0)af_H:X&@Z63R2Y28H&9#H4
+>Ka0R2?6<8RFb_D?:P)E&CD-g&]F]/8I<>8)9CS(]f?(JD>P[=+TPM?:>#D2&Ud-
+b7Xb:O-60O^14T-VQS_0DH6=/74^>))ZV7(S3E)_=)FeATNVA[)6e<\+U.XFf[11
++\I1U0ebZ7VaQQ4<R9FA,;(K>bGIS>e2DFKE@f]D06OV;/=C7HgSO>YU8/<X)(K8
+8FU3g\Id.0/_5Y9>UEE3F>&L7[><W<X01[AU1U2&&.85.&GcOB97=T[<MQ0#Y+(0
+2f?G@9.0K6:XTDT;DP6XFGC;&+>S1e>&a\G@9]^5YNXBQ9g\8;HZTBR(FGSOX9ZW
+aEb9fJWOEX:4NZRD#f&.gO__?LTd(]J\W4A01TBEQ,LN+ZdN(d>5SYGJW6#&Id8d
+AgJVH[?D+3D55:H8)].>9(;(4cegbP(:1UBbON683&4Cg^(S0&+9WgAMA#9_,36f
+]9E/NXQIT0COZRSW(R>gB+@TQ)K-?8QP/1N<TUL.aI4BO6#_4Vb6A]dPNW&>KWIf
+M2].8fBU#4&9+62/_,b.^]7R#gCIKeMc[V0=7/-e0GaVbAG65]E4+Y2f,)MU<2DG
+fQ]V2K]ac9V(c)Gg,G_aS+[@adf\C2J_#34-BZVeI]Z0;_3CV78FV_6[#S59f?Ta
+GAA29=CAc:#NPaJUIQ4O-F73DS8,^#ZD@1GLTe-(bDS?0(d5_WLe6,e,1gedAGGY
+_EQ3bIO+EP_(WSZ:MP<bPJeC7Ygf,\cS+/LB5K[:]^[8BZZeO[fH/aOXTS;X0?GT
+Oc.FMH0-1b\.GA7FPff_&VK4?:M=aYcb?b1UMYL-NY.HQ-6T8/HNQ_BZX3Q:]c,;
+AJd8J9XPVK?gAb<ORU6LbINWg,/OU7MNMFD5N>HbW5RYX?8Lc/LZW,ZEg[a6GgL8
+NS]4&ff&FZ?HbW+Z\Q0#Y),7#3X)NJGR<0A6f>S2R2N_T5@NQZUGE9N;e]1Afc4X
+0RZB4aRQEc\)4U)M,T2H3&:TSXN9gZGe3I6aBM\9Z&L&OM&2d=8OX[S8;&@CT&C9
+eG_]T5adOHVZKc;J,0CZ4=(L&Za4T_?V5VK_\8AW]IFNEg@HNf?ec#cP75I?7dKE
+#A3<2cWG_Mc8g(-^5?ZJ/X_69g1V53K+aPUD.HSVCE]:cZ&X/(9/15Ue5?e0g>K<
+@M/.A\S4+KYEPJ9=>,Aa]-a1AZC6-0U,DB;(,./XfN:DUGdC^^.\UQ9O?UZ?S/M.
+WB.OOgYc0+^^(;(g5VP.D#U(f/M=Be=^f6c3L#CA;63QLde_)0T3<Y+E+>E3?d]L
+<)e(<;;O9ObBJCP-SM12+^NBLMV,c1I/7WQAC;c>LMX4Q[50N8&CEO>[J]N^\D0/
+Ceg#;UPWdX2D?cR\aZMYH0.8B(LW[;6V?-4O9UW]<=>[;]>aBG3Of:^>e/EK61,<
+O/\95<Lb/e>F@P44TNO[J-&;a_bGYXG@I#.LLQ9RUQ^GD9>e0fJ//N<M8\L(Q[[?
+E9.?OOE6bP_&Be5=B7>?@;b^X1SQ<92G0c-Xaa08E=dGE$
+`endprotected
+
+
+
+
+function new(string name="fpa",uvm_component par=null);
+    super.new(name,par);
+endfunction : new
+
+
+
+endclass : fpamodel

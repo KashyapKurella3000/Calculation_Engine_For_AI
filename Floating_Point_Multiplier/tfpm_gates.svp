@@ -1,0 +1,121 @@
+// A simple test bench for the fpm 11 bit floating point multiplier
+`timescale 1ns/10ps
+
+module top();
+    typedef struct packed {
+        reg Sign;
+        reg [4:0] Exp;
+        reg [4:0] Fract;
+    } FP;
+    typedef struct packed {
+        FP A,B;
+        FP Z;
+    } FPS;
+    reg clk,reset;
+    reg pushin,pushout;
+    FP A,B;
+    FP Z;
+    FPS eres[$];
+
+`protected
+79;7EB6_YDS7adYORH(>BNJb9P>IW)0Y1PSb>XL;>;3O8_G,]9C&/))dMYHe>/-G
+8?G]EC-Z:UX/,M,U9\G>@U7IN(7T?JLaAF_c3U=?cXKI]:OR0fB)I1d++:#ZgHBN
+7M)X)-MGYAHf-A3FZK1cUJ1)6:6MeVe,)e@2R@NOHT8G.J_?R)L:LG)>R.Q7b(KD
+=3bHe_3:B#,I]@CI<Bc&g1ET<5eMP4OgcX\IMIE3C)6a6HPS?L>S+SN8FMI6@L6B
+A(9Re(@[4O3)7OX\21ES4gT^=W/EX7\Gc#4DI5gG,\39T,[3fRH-W6EUQ(8R#C8G
+-Kf=bCZ8>P0,4KGa\WaHe0d(@\g\?(L0\:WPdOF&8R>PF><3?,EJA@)/\@:VT&,\
+F^T0@(&#FWK?d]8/CD6e.U1ZC\2,._B&J6O3-Cb<-3FMB=G8d5N4/[_M35UU^LBH
+:K>]DSOFOVf9N(#,aGQQ&AfFJY(gX3XcLM^ZZXACcPJ&YeQcEO(\.)GJH:DZB\P6
+D1+3c7XJ8<(&bMB?Ha5GeaPPM7\a(;b=[2/.fRX6&0U\)LK):PBf<,HN/fQ.<?UQ
+)W(Z5E@HZP&EWc<-F_C>6:GE,N0D?6f9FEfXK?aDb>ED:L?+H0?0>?U-NW5@_X#4
+dYgHLF4TB9K)ZTB44_W(B)NN10_0BX5(9K[c33<MEa.2T1T:XNPL,8CLedHV,O8=
+84M\>fMd56cANeSGc0_:?a7C_A>d9ROQ1(KAE-bSd,7d5V+GSbbBaH4H7;?d9e3+
+#.^D820(JEP0)bO=_XYVa\W1VTaA?g^:NRF\E[WN0dBS\#TfT=a]&G[DAX<Od\,J
+H>K.O,2GT#]MK_L[<15ICFTZI:gZW-I;W/O1D.g2K#R[0;#DVe)d#XEA;^49FeS8
+VaJOg=M[)F=Ca,:R\.a:?)G?dC2PJU4]QC/BJM?:TOF1/EZ8RG_8ZN8W0AAH#VD8
+UYY)_Q(],RG3NP9dc]Z:g,c+S,ReW,^g/^DN_aI=&F^(WC+5>)^IK2JBMVI<-^_U
+94S>F\N)JC?+<,;e&X3?G+.VS10.19Ad:4E-X82_3-S\52W;R=BC1edH](AN5P:d
+KV21<Cc?F&JK&\JGQ5)L(V4]4=8N].T::7>Ba76IK/P+3P<N[6d4,E-11b)A(.fR
+Q=1,D75\I])H7DfbbBM,::K6KPXA1_(NHe)Y4#/GMY9aZ.RM&(dU3F@^L#>,RO0+
+bQGYDUWNg:7#E0FZG^E^2T.IW<\fS.@#L\C+DC>76e\;6\\VYf7f0\70]<.V5=,F
+JE=/X.d@PO+J54=LK,&W?ge#@UI-36Q?2@Sa^;;34Ce7F[N(&\SAA+6bE0R#_92&
+L@IJ)F&4?UXIcM7c,J,]1AT2OT=3&dXC+dcRTKL0L<9D\/T3997\>;1FL8U]<MWY
+SJQ.>KBAC@C2V\FMTI]^?\)^)9;e1[.RTaQc;)XMTH>GTgFK6_()=:[SQ]\CAWX0
+S1^NYW?+TY(\d;-BP,3N/_2^D922gGZc7P=BY-d-4U=;-9@T:95f5SJYLN)5=f2K
+B\^Z-?U/d7H5/L3\30#IfFb4\g(V0eMg(T+S#I1bZ=L0#[TaIC+V\Y\_C2^JHSS^
+gJ&4cX4?UG>gTbVA>R@LXGV(?Y@c/CE\g;U/VCgNOHV#S;^5cP<E-.\9eBFfTBHJ
+2Uc.-NVZ^R8\XZ)EX]??#JP>^S3:B=^>-X?S^#7)dFbLZX0U&;Hc<_@<[Q_2gV7\
+O[0+C-/V9/?W9QI7+]Nb3d-<7&GS(gc\]7ZIMc/XD>eG]&^0FH3.]bWOCNaIdC2N
+V?EI/B.NYT[AV<H:P)PX/-(G:))W-2UL6>6:KfAWG28ALL[9(^&M(T9EN_APJZZa
+1d#.(<E>5E;9c6W&;.XbY,<Q/g>f:LQ+IY4H#:ec7V)9UR\YL4<M6fV#P@Z22XJ7
+E3+af6:VdI[cK]4;ZMFP,R@[?0D:-/^TB[INK>;;YZab2,FUTP9[=P<4g/(IZ.X.
+A)\@S7TDGU^68f#NPIc&8UX.8(;JA,f]e+/[DS65C41#U;P@g0gEAI?[ZTcC_Aa,
+H=^#S0(>PPg,GG(L_.;#eXY)=M#CF<Pa(/Y4^,U=<(f16;45/SPc=AYcLZ\@]2>.
+;8AP0IggbfRA)G5gLOR/,X>b.dSg/T1KV3<J_ZL5B180N4I7gA_8e6[G3V<4?d[-
+^4]7&HXbUUEKb)JNc4?=/e6G>PAgAbBX;8a@G(bLI0:W[aB2)Y8F;/_O(8[EWfBa
+0;7:N?1<GJ+H9OK]g]1SL4?/7_>><KT]g7e@f8eK.GX8?;FJ#T_DT(0O<56Gd4:R
+?9:JdGS9MO;6Td0eI8P)+OK\g<#6@_,#1[aHa]T?05GK7.4Y>58.E7N;ZR6[@UV^
+fXe\5T]_^Y4QCT2f.;>JM\MS-K8(WW01UZb5Uc:?Q)3=DA:Ba<EN@)[^]_2B8(GI
+PN6[N+>@57.2N#-^A1Ye7TM9c]dF1+^?LVZKUgDbB?N/(XZT#_B:=3:D4<cfAI[E
+3b5]FH/TfK/6E6W(SK;0-@Z&(0:bK8>YP@-.TYD4_WSJ:gB.N&4O1]BbGQXdbf=Y
+_1H\@O=aJA&3_U:QITEEO?J)QI&IW8S5U0CK.M&8I2=NVPOH7T5//@d:T_J1&[#H
+>D2.7\#,M>=M^?0W(2g]U.#(Z6D_Q)3FGXOT^?dF+@Y,B6E+;DG),Pg;Y^W<DYN3
+K[8e42T9<IB4<7BFdU,@7T<CWH>1[V3b^8;D^@\\7dW38V9\@eVY.O=[S7.,0WEN
+=FgS5F.M:^1Ade<XEJG_UL5?,agc?eeCca>N_086TIZ<411DP-5T_0,46aGS.HM&
+KL>HI@Tc&SaX/]eE^4PE0UUV,^EV/Q(X.0QOTBfVH2+/88fF[]^W<&7<SUN=gN19
+<ZEf?SX6N&(bLd2BJOX?R/00ONdKRN[>T)OI0B@NZcQ??/[/f[I3MO+JQ-UX]71C
+R;B<K1c(F1_f:c;5>e^[c-,AN;a,4VO=>U.=\OfI7SDRK^R1M6;F/XOJ4EPQOKP,
+8[TFZ9E36/#bV+6E.W\VM;f^)2,VDQWAF(c(.Y;&bA=I[3e&FVZ/-_R]AMcPg<YE
+(>bS)a8PMO5b]D9JcFLD.)L^>W;GDI,J8=42?gYW(dag(_P5#DYgY>T>FO<Y<MXY
+bgQQT2@)d\2V\^>98/(\gdFKX8_U3X#@b4RIDgCN&aO4J,<U<c/D+@3<WLJD:,FE
+SAEAGM:#c\&R]U+[9[Qe1J=7\46DC[Y;GAA?6QAUV8QBJ].=g8Ug+NTD4X\?7;^2
+Z^9L&</O80d]&+9E8Z;dL\6Q<e1^3<)S]0+Re<S@;^#@M\/14dOX>]+;]\U+O@BQ
+e#dTeXL,0S\geNc<-^U<EEZ>P.6(A/G<L^O_SIHJ:1/0_BS=G)):VaM2Ka44P#>A
+/.[]F5_T:eDT;DSTWDBX)N4#eUc0X=7O(73Z.37^,5Yg?;dN1:GZEII128+98(#X
+?=JbDg=T-&@LROZ]PG+G8(&B>/+5)Ve(YMB03+7A>^-;WBTCDS6GV8;6eU4R@acf
+?MFV=bB5-/FM>>4B94(+EQ0+2L&e@dX1Q_)B5_=FAf;<0=8?8C?-_-U6#<MHAaA_
+@9QB)f>O]AbSH<LOQ@bc5^>.\U2d+1\_IbV^[G>V<0b93_PWY&?EQSN\F\ZTGP[,
+2]I=PX+N#7K<)L60M(gIMD+M-:5X>VLIXe[a00e/0]+=X5\ERegZ2XCGLVYI,XaD
+e]3GXRIeB^_1<B^b@6YG5#QX.YP6L.@1,@))+L[WJ?C0Q>N@UJ^P]@]Ob2ZQ-54M
+P5^TbGa;<6BUFB\..RE\COE(W?LYZ9W\)-U20O5E4+H2ZDB[)^C+G8^Y]ZbSRc:\
+1\\QSJDfT38CU^@[[_a7K0E/,Jf<aI@(#ab;F-HcA^?6Y,I\BbKSPQ1IA:NL5(A;
+;Pd@FgcQ+d-9d;L5MeI#<,c@#./@fO^FH^BRIe@KHX>Cd=JXf_P.93g4&YJL^WE^
+g/-AgT<A@CcE\)?#J4H^+M(Af)#H.#G9<a>I#a-7aBNPMTePc#<;Jb0b.:S[([b,
+MAf)KX84ee#1?Ga@(]_#,:,g2MSc5&g@;JG6bLWXO)&H8M(5(=;=C[C&-1&&>^W_
+Df>7M:BM.X41Q_]HT8CNeAJM8<#[V:I9Y7TW\#ED3/OKfg(@g=D(ATGD<-cH[4SF
+=8=<V__=V9KaNg;Y89UN?:9Kd67#.4SfI[=X@6(YE5PO)A&D_6W6QI;,H3g,.NQ4
+-?F,H]a@fH[0[^JVKL(2CM3KD3c:2/K>0:VCD)DA)A8+]F/4(ANA#XO+1:]<7ebG
+_,QcP]X2#a/CB9DEPTBL-980CRc4F9W[P<&(MF:\2ee0G.Y05;)g14_g69bNe>dA
+_</\#:XeU=M9WKA0W50_g@^;B/a]1:MKWgLK\)W6EYH-SDM_3a\;WV48/RMI&A3B
+/A]7F;&DS#d2&NFQ9YF#-]MP0)\.)3THJc>KPddL_WU<U#(,S4S:?cMC-@\9:\C2
+X?#<<U9MgVT6=(4SZCIQ,[E6ZKU#?:#-6:\K7T2S,WMfDM3^2b0=7+Bg;+@G>P6X
+KTcf=K:(3Id0V^YHY2C#,;A52c<1>X+^R)g9\#)VBA];]:La3@(SZc(,;Hg<0[AJ
+a(@,RF)]O<K(^W;@L>M2bEU_Uaa?8PV&/4:,<Ndg\G&5]6Ia0\=UJ]3F2+@f>bS.
+P0(9JbM^M,fJaIBA[3]Efa,C@?(3(2.(_#DJT0Ze6_9D+a.F(dBBGPKKB]]:,;(P
+>CDVV;<.EQRKM78<<JA8LGJN#Z]I)9R;R7:ZBcW7D.e7<VXXC(-eQO1U>-&+c:QB
+9&P#V56AOgHE(S)PF>gMDM@8D/P@/?56<=:_:T3BaER?IO8]WB:SIb@)C/d<3RS+
+Z#40>RY@K5&[VSbaO;A/g\>H<E4C>5R?5XU/(O_af;d+K9+LcIF7L,.V,&aG:dB@
+LBDZWXL45G2;+NFg7)<BMSC,+FR&:D42)-(c_04>6FQ]=D60g:,e0K4;)Ubc1IPB
+R6F^XCT1+,[<LL06,fY<Z=@&&XD2U0c\:?O_4aBBE_ZT4.XQ(72)0#^d_X,BAO_3
+>2J;[IR8BMLH0fCYJ[KW3W3VH(5(X[DE8@YKXS?>ICU(N_e<=+A/b]ZZ4f+WS>/)
+5NKMGSA3bMbC+STg=#RSG-fg:9?>GVUI^SF,;1?7W15[&6->Z)gcSY>TL\JKVX/)
+f8)\QFgJg-@aXLNXZfPCQ(3_d?),_WXWJEF+\9]\#>52R).?[;KSO=0]6X+HF.<P
+K7]bW(B6e(:Se(GZ7BWSVTa+RJS>8XbV.I\HE.Xf5NPHbM[g?N>[,/#I>ZV7ONEB
++1[IBBQ(N2X4aE5b1PPDe&gUOYQWQ3VZTDUECIZfYWMP,+XgGJcP&@4725IY;F+[
+[M<TcbQA7VbR7@7fQ@5K3KMF8T?T_c<5#PM[]?#0XaZcZg;@NS34.K/eHG.#.><I
+a;OL1:d2Kd-RBL_aXcMP-9=\#_[H[;1(<cPQ:e^\H@1cB$
+`endprotected
+
+
+initial begin
+    $dumpfile("fpm.vcd");
+    $dumpvars(9,top);
+end
+
+fpm m(.clk(clk),.reset(reset),.A(A),.B(B),.pushin(pushin),
+    .pushout(pushout),.Z(Z) );
+
+
+endmodule : top
+
+`include "fpm_gates.v"

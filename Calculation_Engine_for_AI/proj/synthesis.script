@@ -1,0 +1,34 @@
+set link_library {/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db /apps/synopsys/PrimeTimeNew/pts/Q-2019.12/libraries/syn/dw_foundation.sldb}
+set target_library {/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db}
+suppress_message {{ UID-401 VER-130 }}
+read_sverilog fpeng.sv
+current_design fpeng
+create_clock Rclk -name Rclk -period 0.8
+set_propagated_clock Rclk
+set_clock_uncertainty 0.15 Rclk
+set_propagated_clock Rclk
+set_output_delay 0.2 -clock Rclk [all_outputs]
+create_clock Sclk -name Sclk -period 0.8
+set_propagated_clock Sclk
+set_clock_uncertainty 0.15 Sclk
+set_propagated_clock Sclk
+set_output_delay 0.2 -clock Sclk [all_outputs]
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [remove_from_collection [remove_from_collection [all_inputs] [get_port Rclk]] [get_port Rreset]] [get_port Sclk] ] [get_port Sreset] ]
+set_driving_cell -lib_cell NAND2X1 $all_inputs_wo_rst_clk
+set_input_delay 0.2 -clock Rclk $all_inputs_wo_rst_clk
+set_output_delay 0.2 -clock Rclk [all_outputs]
+set_input_delay 0.2 -clock Sclk $all_inputs_wo_rst_clk
+set_output_delay 0.2 -clock Sclk [all_outputs]
+set_fix_hold [ get_clocks Rclk ]
+set_fix_hold [ get_clocks Sclk ]
+set_output_delay 0.3 -clock Sclk [all_outputs]
+set_output_delay 0.3 -clock Rclk [all_outputs]
+set_max_delay 1.0 -from [all_inputs] -to [all_outputs]
+compile_ultra
+create_clock Rclk -name Rclk -period 1.00
+create_clock Sclk -name Sclk -period 1.00
+
+update_timing
+report_timing -max_paths 5
+write -hierarchy -format verilog -output fpeng_gates.v
+quit

@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+source /apps/design_environment.sh
+dc_shell -f synthesis.script | tee synres.txt

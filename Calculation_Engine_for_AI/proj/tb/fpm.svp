@@ -1,0 +1,48 @@
+// A model for the FP11 multiplier
+
+class modFP11m extends uvm_scoreboard;
+`uvm_component_utils(modFP11m)
+
+uvm_tlm_analysis_fifo#(OPS) omsg;
+uvm_analysis_port#(FP11) rmsg;
+
+function new(string name="modFP11m",uvm_component par=null);
+    super.new(name,par);
+endfunction : new
+
+
+function void build_phase(uvm_phase phase);
+    omsg=new("opread",this);
+    rmsg=new("rmsg",this);
+endfunction : build_phase
+
+task run_phase(uvm_phase phase);
+    `protected
+BPAAVg.K&8N4Z;IUaJ0eOaNaU:?#c)Y2[3)\S1FCPg8ZAaIJS)Cg5)ARQ@cYW=[>
+;@S];Q.HE#@\ZcQ^1QNB&^?(0C@,_1Y.<_5I.>3E9#?YM;+HN=FYRDC6Rf[N#KBf
+5A7YQQJ\cVa8BV-H6dGZ5c8Q2R+Me_EB?+7V]8PN]c8:K(\)DJYQ0db8TWRL@C]\
+LD2;:K:CK+87,X+2?3Hgg2c:gUV7^0^?2OE3Q9)/PX<e#T4bed#40UH>@,A4g<f>
+GR^2cSSIIA.RYf]6[T-bg8_I#?@J<Ycg5J/N<4:eJZHFE)TfZ#]:;UZ@7?C(1.)a
+RYR\3N4+gdUULEG),ID23CR_dXNON14__EYZE5<_7Z=JfCOaK57[^Fa+5aS5[;-B
+94N7TW9#OWIOVYRc@e[WJf1>5D=\Odc?36;72LFV57>aHeJ\5Qe#P5^P26dI^M@G
+O=44D=U3^=b[?^3gM5;&@<3[1DMTS/(L&cF.4EfIdKE.SM7IE&,]\25Z^,VV(SCU
+]EBNcP\1:#MCNA4=[8ID>?)UIf3C)L<N<Pb9.K:&DCIPSESdXPG>@CH3=,MT&V8?
+1L.^?A;&461KTT=-DS\Y\Yb);^<U(K]#+VacQaAAPf7)U._A32<-Ec]TLQ:D;g6F
+A4IGR/EHP?>Z1IDE@BQ\=>GB@G[.(dW;5Md#180Y/Q^fH86=K-U]#S0?a>TXOC9D
+bEICNdGY]NLR6cS]//48cCG@fJ;a4Ba^2,C09b90Z+/1N5ZIM-YI5QK8Q1fGO=cT
+M6NLEJJ]dY<UIAX9/3/Z]73ESa^0C(@3@/(5#DWGATE\]:b69T=.P;^TU0L^^Q;e
+JID<EEZOR,]@)FaTY:>eP13H1511g@5N=_BQ.[bCR1IN=3:d-^PE4eY8c4dcFTF3
+A8AQ[BJ]3]]I8R9Cdd+]aZ+V2P@]ICc-WY;cKB/P>\9=edZ3TKCI6dT1QS[&_ad-
+#<-.BW?^)-H1-EXWR1#1UP;==eOA9S+4I\D^E5ZMbf0635(NOfecX>-:;=e\84S0
+b?Z+)_QGSKQDI_aK)HGUH-Pb:#+@?L,C=:MfeX,_0<c@[]&7.836\M[HP1-&GI1.
+89HDY<&JD<a@Q\TS9W(3X4&4<P?-8ZaIIgAZ#9LRAU_D)F4@/^EPgNHI<TP3/,Q(
+^[C3H^_AGBZ27>3a<?Ic^\UE7[))J1(#(7X\;.d&)bH@I)-fF[,-<XN[-HF[;<AY
+ddCcdW-\NK]?5VVKSBQE35+-;R81QMg83FVT6]FPHPNMO,?bQXI0@c)d5@:VaE-d
+d(VFFHBS5bH33]\]3O2,9V27QV91<C)g>e:?a292\K<MG$
+`endprotected
+
+endtask : run_phase
+
+
+
+endclass : modFP11m
